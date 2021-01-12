@@ -1,0 +1,50 @@
+﻿@model scaffold.Models.Recenzie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Recenzie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titlu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titlu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDFilm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDFilm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FilmData.Denumire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FilmData.Denumire)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDRecenzie }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

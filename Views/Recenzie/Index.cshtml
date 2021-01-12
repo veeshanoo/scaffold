@@ -1,0 +1,57 @@
+﻿@model IEnumerable<scaffold.Models.Recenzie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @if (!string.IsNullOrEmpty(ViewBag.message))
+    {
+        <script>alert("@ViewBag.message");</script>
+    }
+</p>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<p>
+    @Html.ActionLink("Search", "Search")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titlu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nota)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDFilm)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titlu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nota)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDFilm)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDRecenzie }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDRecenzie }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDRecenzie })
+        </td>
+    </tr>
+}
+
+</table>
